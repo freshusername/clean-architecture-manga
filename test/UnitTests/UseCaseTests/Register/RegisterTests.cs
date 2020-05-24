@@ -1,6 +1,5 @@
 namespace UnitTests.UseCaseTests.Register
 {
-    using System;
     using System.Threading.Tasks;
     using Application.Boundaries.Register;
     using Application.UseCases;
@@ -35,14 +34,6 @@ namespace UnitTests.UseCaseTests.Register
                 amount));
 
             Assert.NotEmpty(presenter.AlreadyRegistered);
-        }
-
-        [Fact]
-        public void GivenNullInput_ThrowsException()
-        {
-            RegisterUseCase register =
-                new RegisterUseCase(null, null, null, null, null, null, null, null);
-            Assert.ThrowsAsync<Exception>(async () => await register.Execute(null));
         }
     }
 }
